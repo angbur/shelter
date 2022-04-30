@@ -21,9 +21,9 @@ body, :root, html {
 --grey-dark-xl: #4C4C4C;
 --light-grey-s: #FAFAFA;
 --primary: #F1CDB3;
+--primary-light: #FDDCC4;
 --light-xl: #FFFFFF;
 --light-l: #F6F6F6;
-
 }
 
 /*=== Heading s===*/
@@ -108,11 +108,20 @@ button.primary-contained {
     border: none;
 }
 
+button.primary-contained:hover {
+    background-color: var(--primary-light);
+}
+
 button.primary-outlined {
     background: none;
     border: 2px solid;
     border-color: var(--primary);
     width: auto;
+}
+
+button.primary-outlined:hover {
+    background-color: var(--primary);
+    border: none;
 }
    
 /*=== logo ===*/
