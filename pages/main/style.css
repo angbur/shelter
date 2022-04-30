@@ -1,3 +1,15 @@
+/*=== colors ===*/
+:root {
+    --grey-dark-s: #CDCDCD;
+    --grey-dark-m: #B2B2B2;
+    --grey-dark-l: #545454;
+    --grey-dark-xl: #4C4C4C;
+    --light-grey-s: #FAFAFA;
+    --primary: #F1CDB3;
+    --primary-light: #FDDCC4;
+    --light-xl: #FFFFFF;
+    --light-l: #F6F6F6;
+    }
 
 body, :root, html {
     font-family: 'Arial', sans-serif;
@@ -11,19 +23,6 @@ body, :root, html {
     background: -moz-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
     background:  -webkit-linear-gradient(left,transparent,rgb(80, 63, 51) 0%,transparent);
     background-color: rgb(37, 35, 36);
-}
-
-/*=== colors ===*/
-:root {
---grey-dark-s: #CDCDCD;
---grey-dark-m: #B2B2B2;
---grey-dark-l: #545454;
---grey-dark-xl: #4C4C4C;
---light-grey-s: #FAFAFA;
---primary: #F1CDB3;
---primary-light: #FDDCC4;
---light-xl: #FFFFFF;
---light-l: #F6F6F6;
 }
 
 /*=== Heading s===*/
@@ -91,7 +90,7 @@ p.caption2 {
     margin: 0;
 }
 
-/*=== button ===*/
+/*=== buttons ===*/
 button {
     border-radius: 100px;
     margin: 2.1rem 0 0 0;
@@ -178,7 +177,7 @@ nav {
     top: -1px;
 }
 
-.navbar li:hover, .navbar li:focus, a:hover{
+.navbar li:hover, .navbar li:focus, li:not(.active) a:hover{
     color: var(--light-grey-s);
     cursor: pointer;
 }
