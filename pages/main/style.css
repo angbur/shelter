@@ -229,6 +229,11 @@ nav {
     text-align: center;
     height: 435px;
     width: 270px;
+    cursor: pointer;
+}
+
+.card:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
 /*=== section ===*/
@@ -274,6 +279,7 @@ main button {
 
 #donation .box {
     margin: 0;
+    align-items: flex-start;
 }
 
 #donation img {
@@ -393,6 +399,12 @@ footer img.icon {
 p.email, p.phone, p.location1, p.location2 {
     margin-bottom: 2rem;
 }
+
+footer  a:link, footer a:visited {
+    color: var(--primary);
+}
+
+/*=== modal ===*/
 
 
 
