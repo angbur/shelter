@@ -285,7 +285,7 @@ main button {
 }
 
 #our-friends p.caption {
-    margin: 1.4rem 0.5rem;
+    margin: 1.4rem 0.5rem 0 0.5rem;
 }
 
 #our-friends button.primary-contained{
