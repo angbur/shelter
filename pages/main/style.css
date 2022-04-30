@@ -200,6 +200,7 @@ nav {
     padding: 4rem 2rem 5rem 2rem;
     margin: 0 8rem;
 }
+
 .box {
     display: flex;
     flex-direction: column;
@@ -342,6 +343,7 @@ main button {
     margin: 0 3rem 1.7rem 3rem;
     text-align: center;
 }
+
 /* === footer ===*/
 
 footer .container {
