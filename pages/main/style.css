@@ -302,6 +302,10 @@ main button {
     margin: 0 0 5rem 0;
 }
 
+#our-friends button.primary-outlined {
+    margin: 1.5rem 0;
+}
+
 #our-friends .card:nth-child(2) {
     margin: 0 4.5rem;
 }
