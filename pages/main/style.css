@@ -25,6 +25,12 @@ body, :root, html {
     background-color: rgb(37, 35, 36);
 }
 
+::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
 /*=== Heading s===*/
 h1,h2,h3,h4,h5,h6, p.caption  {
     font-family: 'Georgia', sans-serif;
@@ -124,7 +130,7 @@ button.primary-outlined:hover {
 }
    
 /*=== logo ===*/
-p.logo-title {
+h1.logo-title {
     font-size: 1.6rem;
     font-family: 'Georgia', sans-serif;
     color: var(--primary);
@@ -132,25 +138,24 @@ p.logo-title {
     line-height: 35px;
     letter-spacing: 0.06em;
     margin: 0 0 10px 0;
+    cursor: pointer;
 }
 
-p.logo-subtitle {
+h4.logo-subtitle {
     font-size: 0.65rem;
     line-height: 15px;
     letter-spacing: 0.11em;
     color: var(--light-xl);
     margin: 0;
+    cursor: pointer;
 }
+
 
 /*=== nav ===*/
 
 nav {
     padding: 3rem 2.1rem;
     display: flex;
-}
-
-.logo {
-    flex: 1;
 }
 
 .navbar, a:link, a:visited  {
