@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'Georgia Bold';
+    src: url('/assets/fonts/georgia.ttf');
+}
+
 /*=== colors ===*/
 :root {
     --grey-dark-s: #CDCDCD;
@@ -405,8 +410,88 @@ footer  a:link, footer a:visited {
 }
 
 /*=== modal ===*/
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(41, 41, 41, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+} 
 
+.modal img {
+    width: auto;
+    padding: 1rem;
+    flex: 1;
+}
 
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}  
+
+.modal-content h3 {
+    margin-top: 1rem;
+}
+
+.modal .box {
+    flex: 1;
+}
+
+.modal li {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Georgia', sans-serif;
+}
+
+.modal li b {
+    font-family: 'Georgia Bold';
+}
+
+.modal ::marker {
+    color: var(--primary);
+    font-size: 0.8em;
+  }
+  
+
+.close-button {
+    position: absolute;
+    top: -55px;
+    left: 100%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    font-size: 1.7rem;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+.close-button:hover {
+    background-color: var(--primary);
+} 
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+} 
 
 
                                              
