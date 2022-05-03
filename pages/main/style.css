@@ -322,13 +322,30 @@ main button {
     margin: 1.5rem 0;
 }
 
-#our-friends .card:nth-child(2) {
-    margin: 0 4.5rem;
+#our-friends .card {
+    margin: 0 2.25rem;
 }
 
 #our-friends .container {
-    padding-top: 0;
-    padding-bottom: 3rem;
+    padding: 0 0 3rem 0;
+}
+
+#our-friends .arrow-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    font-size: 1.1rem;
+    font-weight: 400;
+    background-color: transparent;
+    width: auto;
+    padding: 12px;
+}
+
+#our-friends .arrow-button:hover {
+    background-color: var(--primary);
 }
 
 #how-you-can-help {
@@ -364,7 +381,7 @@ main button {
 footer .container {
     padding: 0;
     justify-content: space-between;
-    margin: 2rem 2rem 0 2rem;
+    margin: 3rem 0 1rem 2rem;
     align-items: flex-start;
 }
 
@@ -380,7 +397,7 @@ footer .container {
     font-size: 1.75rem;
     line-height: 1.3;
     letter-spacing: 0.06em;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 footer p {
@@ -493,5 +510,8 @@ footer  a:link, footer a:visited {
     transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 } 
 
+span.span-with-margin {
+    margin-left: 2.4rem;
+}
 
                                              
