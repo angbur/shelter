@@ -241,6 +241,10 @@ nav {
     box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
+.card:hover > button {
+    background: var(--primary);
+}
+
 /*=== section ===*/
 
 main p {
@@ -412,9 +416,7 @@ footer a:link, p.location1, p.location2 {
     font-size: 1rem;
 }
 
-footer img.icon {
-    position: relative;
-    top: 5px;
+footer .icon {
     margin-right: 1rem;
 }
 
