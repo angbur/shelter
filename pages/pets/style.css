@@ -133,7 +133,7 @@ button.primary-outlined:hover {
 
 .container {
     padding: 4rem 2rem 5rem 2rem;
-    margin: 0 8rem;
+    margin: 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -220,6 +220,7 @@ nav {
     height: 435px;
     width: 270px;
     cursor: pointer;
+    margin: 0 1rem 1.5rem 1rem;
 }
 
 .card:hover {
@@ -233,7 +234,9 @@ nav {
 /* === main === */
 
 main .container {
-    padding: 0 0 3rem 0;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
 }
 
 main h3 {
@@ -259,8 +262,37 @@ main button.primary-outlined {
     margin: 1.5rem 0;
 }
 
-main .card {
-    margin: 0 2.25rem;
+/* === pagination === */
+.pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1.5rem 0 5rem 0;
+}
+.icon-round {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    font-size: 1.1rem;
+    font-weight: 400;
+    background-color: transparent;
+    width: 52px;
+    height: 52px;
+    margin: 0 0.5rem;
+    font-size: 1rem;
+    font-family: 'Georgia', sans-serif;
+}
+
+.icon-round + .active {
+    background: var(--primary);
+}
+
+.pagination > .disabled {
+    color: var(--grey-dark-s);
+    border-color: var(--grey-dark-s);
 }
 
 /* === footer ===*/
@@ -274,9 +306,8 @@ footer {
 }
 
 footer .container {
-    padding: 0;
+    padding: 1rem 2rem 0 2rem;
     justify-content: space-between;
-    margin: 3rem 0 1rem 2rem;
     align-items: flex-start;
 }
 
