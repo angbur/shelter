@@ -187,7 +187,7 @@ nav {
     align-items: center;
     list-style-type: none;
     margin: 0;
-    color: var(--grey-dark-s);
+    color: var(--grey-dark-l);
     line-height: 1.2rem;
     text-decoration: none;
 }
@@ -204,12 +204,12 @@ nav {
 }
 
 .navbar li:hover, .navbar li:focus, li:not(.active) a:hover{
-    color: var(--light-grey-s);
+    color: var(--grey-dark-xl);
     cursor: pointer;
 }
 
 .navbar li.active {
-    color: var(--light-grey-s);
+    color: var(--grey-dark-3xl);
     border-bottom: solid 3px;
     border-color: var(--primary);
 }
@@ -273,7 +273,6 @@ main button.primary-outlined {
     display: flex;
     align-items: center;
     justify-content: center;
-    cursor: pointer;
     border-radius: 50%;
     border: 1px solid var(--primary);
     font-size: 1.1rem;
@@ -286,13 +285,23 @@ main button.primary-outlined {
     font-family: 'Georgia', sans-serif;
 }
 
-.icon-round + .active {
+.pagination .icon-round + .active {
     background: var(--primary);
+    cursor: default;
 }
 
 .pagination > .disabled {
     color: var(--grey-dark-s);
     border-color: var(--grey-dark-s);
+    cursor: default;
+}
+
+.pagination :not(.disabled) {
+    cursor: pointer;
+}
+
+.pagination :not(.disabled):hover {
+    background-color: var(--primary);
 }
 
 /* === footer ===*/
