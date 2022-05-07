@@ -1,17 +1,21 @@
-/*=== colors ===*/
-:root {
---grey-dark-s: #CDCDCD;
---grey-dark-m: #B2B2B2;
---grey-dark-l: #545454;
---grey-dark-xl: #4C4C4C;
---light-grey-s: #FAFAFA;
---primary: #F1CDB3;
---primary-light: #FDDCC4;
---light-xl: #FFFFFF;
---light-l: #F6F6F6;
+@font-face {
+    font-family: 'Georgia Bold';
+    src: url('/assets/fonts/georgia.ttf');
 }
 
-/*=== layout ===*/
+/*=== colors ===*/
+:root {
+    --grey-dark-s: #CDCDCD;
+    --grey-dark-m: #B2B2B2;
+    --grey-dark-l: #545454;
+    --grey-dark-xl: #4C4C4C;
+    --grey-dark-3xl: #292929;
+    --light-grey-s: #FAFAFA;
+    --primary: #F1CDB3;
+    --primary-light: #FDDCC4;
+    --light-xl: #FFFFFF;
+    --light-l: #F6F6F6;
+    }
 
 body, :root, html {
     font-family: 'Arial', sans-serif;
@@ -20,17 +24,14 @@ body, :root, html {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: var(--light-xl);
 }
 
-header {
-    background: var(--light-xl);
-}
-
-main {
-    background: var(--light-l);
-    height: 100vh;
-    text-align: center;
-}
+::after, ::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
 
 /*=== Heading s===*/
 h1,h2,h3,h4,h5,h6, p.caption  {
@@ -78,7 +79,26 @@ p {
     margin: 1rem 0 0 0;
 }
 
-/*=== button ===*/
+p.caption {
+    font-size: 1rem;
+    color: var(--grey-dark-l);
+    letter-spacing: 0.06em;
+    line-height: 23px;
+    font-weight: 400;
+    margin: 0;
+}
+
+p.caption2 {
+    color: var(--grey-dark-m);
+    font-size: 0.6rem;
+    line-height: 1.5;
+    font-family: 'Arial Light', sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    margin: 0;
+}
+
+/*=== buttons ===*/
 button {
     border-radius: 100px;
     margin: 2.1rem 0 0 0;
@@ -110,24 +130,46 @@ button.primary-outlined:hover {
     background-color: var(--primary);
     border: none;
 }
+
+.container {
+    padding: 4rem 2rem 5rem 2rem;
+    margin: 0 8rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-with-image {
+    margin-right: 3rem;
+    display: flex;
+    justify-content: stretch;
+}
    
 /*=== logo ===*/
-p.logo-title {
+h1.logo-title {
     font-size: 1.6rem;
     font-family: 'Georgia', sans-serif;
-    color: var(--primary);
+    color: var(--grey-dark-l);
     font-weight: 400;
     line-height: 35px;
     letter-spacing: 0.06em;
     margin: 0 0 10px 0;
+    cursor: pointer;
 }
 
-p.logo-subtitle {
+h4.logo-subtitle {
     font-size: 0.65rem;
     line-height: 15px;
     letter-spacing: 0.11em;
-    color: var(--light-xl);
+    color: var(--grey-dark-3xl);
     margin: 0;
+    cursor: pointer;
 }
 
 /*=== nav ===*/
@@ -135,10 +177,6 @@ p.logo-subtitle {
 nav {
     padding: 3rem 2.1rem;
     display: flex;
-}
-
-.logo {
-    flex: 1;
 }
 
 .navbar, a:link, a:visited  {
@@ -165,7 +203,7 @@ nav {
     top: -1px;
 }
 
-.navbar li:hover, .navbar li:focus, a:hover{
+.navbar li:hover, .navbar li:focus, li:not(.active) a:hover{
     color: var(--light-grey-s);
     cursor: pointer;
 }
@@ -181,34 +219,48 @@ nav {
     text-align: center;
     height: 435px;
     width: 270px;
+    cursor: pointer;
 }
 
-.container {
-    padding: 4rem 2rem 5rem 2rem;
-    margin: 0 8rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
+.card:hover {
+    box-shadow: 0px 2px 35px 14px rgba(13, 13, 13, 0.04);
 }
 
-.box {
-    display: flex;
-    flex-direction: column;
+.card:hover > button {
+    background: var(--primary);
 }
 
-.box-with-image {
-    margin-right: 3rem;
-    display: flex;
-    justify-content: stretch;
+/* === main === */
+
+main .container {
+    padding: 0 0 3rem 0;
 }
 
-.box-with-icons {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+main h3 {
+    padding: 4rem 0 3rem 0;
     text-align: center;
-    justify-content: center;
+}
+
+main {
+    background: var(--light-l);
+    text-align: center;
+}
+
+main p.caption {
+    margin: 1.4rem 0.5rem 0 0.5rem;
+}
+
+main button.primary-contained{
+    width: 21.75%;
+    margin: 0 0 5rem 0;
+}
+
+main button.primary-outlined {
+    margin: 1.5rem 0;
+}
+
+main .card {
+    margin: 0 2.25rem;
 }
 
 /* === footer ===*/
@@ -224,7 +276,7 @@ footer {
 footer .container {
     padding: 0;
     justify-content: space-between;
-    margin: 2rem 2rem 0 2rem;
+    margin: 3rem 0 1rem 2rem;
     align-items: flex-start;
 }
 
@@ -240,7 +292,7 @@ footer .container {
     font-size: 1.75rem;
     line-height: 1.3;
     letter-spacing: 0.06em;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
 }
 
 footer p {
@@ -255,9 +307,7 @@ footer a:link, p.location1, p.location2 {
     font-size: 1rem;
 }
 
-footer img.icon {
-    position: relative;
-    top: 5px;
+footer .icon {
     margin-right: 1rem;
 }
 
@@ -265,3 +315,96 @@ p.email, p.phone, p.location1, p.location2 {
     margin-bottom: 2rem;
 }
 
+footer  a:link, footer a:visited {
+    color: var(--primary);
+}
+
+/*=== modal ===*/
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  rgba(41, 41, 41, 0.6);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+} 
+
+.modal img {
+    width: auto;
+    padding: 1rem;
+    flex: 1;
+}
+
+.modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    text-align: left;
+}  
+
+.modal-content h3 {
+    margin-top: 1rem;
+}
+
+.modal .box {
+    flex: 1;
+}
+
+.modal li {
+    font-size: 1rem;
+    line-height: 1.6;
+    font-family: 'Georgia', sans-serif;
+}
+
+.modal li b {
+    font-family: 'Georgia Bold';
+}
+
+.modal ::marker {
+    color: var(--primary);
+    font-size: 0.8em;
+  }
+  
+
+.close-button {
+    position: absolute;
+    top: -55px;
+    left: 100%;
+    width: 52px;
+    height: 52px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 50%;
+    border: 1px solid var(--primary);
+    font-size: 1.7rem;
+    font-weight: 400;
+    background-color: transparent;
+}
+
+.close-button:hover {
+    background-color: var(--primary);
+} 
+
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+} 
+
+span.span-with-margin {
+    margin-left: 2.4rem;
+}
+
+                                             
