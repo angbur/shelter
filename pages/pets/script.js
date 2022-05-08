@@ -36,23 +36,23 @@ function toggleModal3() {
 }
 
 function toggleModal4() {
-    modal3.classList.toggle("show-modal");
+    modal4.classList.toggle("show-modal");
 }
 
 function toggleModal5() {
-    modal3.classList.toggle("show-modal");
+    modal5.classList.toggle("show-modal");
 }
 
 function toggleModal6() {
-    modal3.classList.toggle("show-modal");
+    modal6.classList.toggle("show-modal");
 }
 
 function toggleModal7() {
-    modal3.classList.toggle("show-modal");
+    modal7.classList.toggle("show-modal");
 }
 
 function toggleModal8() {
-    modal3.classList.toggle("show-modal");
+    modal8.classList.toggle("show-modal");
 }
 
 function windowOnClick(event) {
