@@ -175,7 +175,7 @@ h4.logo-subtitle {
 /*=== nav ===*/
 
 nav {
-    padding: 3rem 2.1rem;
+    padding: 1.5rem 2.1rem;
     display: flex;
 }
 
@@ -239,7 +239,7 @@ main .container {
     margin: 0;
 }
 
-main h3 {
+main > h3 {
     padding: 4rem 0 3rem 0;
     text-align: center;
 }
@@ -250,7 +250,7 @@ main {
 }
 
 main p.caption {
-    margin: 1.4rem 0.5rem 0 0.5rem;
+    margin: 1.3rem 0.5rem 0 0.5rem;
 }
 
 main button.primary-contained{
@@ -315,7 +315,7 @@ footer {
 }
 
 footer .container {
-    padding: 1rem 2rem 0 2rem;
+    padding: 2.5rem 2rem 0 2rem;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -349,6 +349,8 @@ footer a:link, p.location1, p.location2 {
 
 footer .icon {
     margin-right: 1rem;
+    position: relative;
+    top: 8px;
 }
 
 p.email, p.phone, p.location1, p.location2 {
