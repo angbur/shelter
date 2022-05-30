@@ -224,12 +224,12 @@ section, footer {
 .container {
     padding: 4rem 2rem 5rem 2rem;
     margin: 0 8rem;
-    max-width: 1280px;
 }
 
 .box {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 .box-with-image {
@@ -306,10 +306,14 @@ main button {
 #donation .box {
     margin: 0;
     align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 1rem;
 }
+
 
 #donation img {
     margin-right: 15px;
+    max-width: 400px;
 }
 
 #donation .container {
@@ -547,6 +551,7 @@ span.span-with-margin {
 .showMenu {
     transform: rotate(-90deg);
 }
+
 nav .navbar-mobile {
     display: flex;
     flex-direction: column;
@@ -567,7 +572,12 @@ nav .navbar-mobile a.menuItem:link, nav .navbar-mobile a.menuItem:visited {
 nav .navbar-mobile li {
     margin-left: 0;
 }
-  
+
+@media only screen and (min-width: 1280px) {
+    .container {
+        max-width: 1280px;
+    }
+}
 
 @media only screen and (max-width: 1279px) {
     nav {
@@ -697,7 +707,6 @@ nav .navbar-mobile li {
     }
     #about-the-shelter .container {
         padding: 1rem;
-        margin: 1rem;
     }
     #about-the-shelter h3 {
         margin: 2rem 0;
@@ -716,22 +725,29 @@ nav .navbar-mobile li {
         padding: 2rem 0.5rem;
     }
     #donation .container {
-        padding: 1rem;
+        padding: 0;
         margin: 0;
-        align-items: center;
     }
     #donation .box {
        align-items: center;
+       padding: 0;
+       margin: 0;
     }
     #donation .box-with-image {
-        padding: 2rem;
+        justify-content: center;
+        width: 100vw;
     }
     #donation .box-with-image img {
         position: flex;
         justify-content: center;
         align-items: center;
         text-align: center;
-       
+        width: 100vw;
+        margin-right: 0;
+    }
+    .box-with-image {
+        padding: 0;
+        margin: 0;
     }
 }
 
