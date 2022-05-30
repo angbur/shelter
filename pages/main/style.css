@@ -103,6 +103,10 @@ p.caption2 {
 }
 
 /*=== buttons ===*/
+
+nav button {
+    margin-top: 0;
+}
 button {
     border-radius: 100px;
     margin: 2.1rem 0 0 0;
