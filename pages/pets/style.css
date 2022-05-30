@@ -517,8 +517,13 @@ nav .navbar-mobile li {
     footer .box-footer {
         margin: 0 2rem 2rem 2rem;
     }
+    .modal .box{
+        width: 50vw;
+}
+
+@media only screen and (max-width: 767px) {
     .modal img {
-        display: none;
+        display: none !important;
     }
     .modal-list {
         padding: 0 1em;
@@ -530,9 +535,6 @@ nav .navbar-mobile li {
     .modal-content {
         padding: 0.5rem 0;
     }
-}
-
-@media only screen and (max-width: 767px) {
     .navbar {
         display: none;
     }
