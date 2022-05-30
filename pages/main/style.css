@@ -9,6 +9,7 @@
     --grey-dark-m: #B2B2B2;
     --grey-dark-l: #545454;
     --grey-dark-xl: #4C4C4C;
+    --grey-dark-3xl: #292929;
     --light-grey-s: #FAFAFA;
     --primary: #F1CDB3;
     --primary-light: #FDDCC4;
@@ -135,6 +136,9 @@ button.primary-outlined:hover {
 }
    
 /*=== logo ===*/
+.logo {
+    z-index: 200;
+}
 h1.logo-title {
     font-size: 1.6rem;
     font-family: 'Georgia', sans-serif;
@@ -198,6 +202,14 @@ nav {
     border-color: var(--primary);
 }
 
+
+section, footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .container, .container-hero {
     display: flex;
     flex-direction: row;
@@ -208,6 +220,7 @@ nav {
 .container {
     padding: 4rem 2rem 5rem 2rem;
     margin: 0 8rem;
+    max-width: 1280px;
 }
 
 .box {
@@ -293,8 +306,6 @@ main button {
 
 #donation img {
     margin-right: 15px;
-    position: relative;
-    top: 5px
 }
 
 #donation .container {
@@ -318,7 +329,7 @@ main button {
 }
 
 #our-friends button.primary-contained{
-    width: 21.75%;
+    width: fit-content;
     margin: 0 0 5rem 0;
 }
 
@@ -392,6 +403,7 @@ footer .container {
 .box-footer {
     display: flex;
     flex-direction: column;
+    margin: 0 3rem;
 }
 
 .footer-title {
@@ -418,6 +430,8 @@ footer a:link, p.location1, p.location2 {
 
 footer .icon {
     margin-right: 1rem;
+    position: relative;
+    top: 12px;
 }
 
 p.email, p.phone, p.location1, p.location2 {
@@ -515,5 +529,208 @@ footer  a:link, footer a:visited {
 span.span-with-margin {
     margin-left: 2.4rem;
 }
+
+/*=== responsive navbar ===*/
+
+.burger-menu {
+    display: none;
+    z-index: 100;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+.showMenu {
+    transform: rotate(-90deg);
+    transition: 0.4s;
+}
+nav .navbar-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: var(--grey-dark-3xl);
+    z-index: 80;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}  
+
+nav .navbar-mobile a.menuItem:link, nav .navbar-mobile a.menuItem:visited {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+nav .navbar-mobile li {
+    margin-left: 0;
+}
+  
+
+@media only screen and (max-width: 1279px) {
+    nav {
+        padding: 1.5rem;
+    }
+    .container-hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 100vw;
+        align-items: center;
+        margin-top: 1.5rem;
+    }
+    .container-hero .box {
+        margin-left: 0;
+    }
+    main p {
+        margin: 2rem;
+    }
+    .container-hero h2 {
+        margin-left: 2rem;
+    }
+    .container-hero button {
+        margin: 0.75rem 2rem;
+        width: fit-content;
+        text-align: center;
+    }
+    .container-hero .button-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    .container-hero .box-with-image {
+        flex-grow: grow;
+        margin: 4rem 2rem 0 4rem;
+    }
+    .container-hero .box-with-image img {
+        width: calc(100% - 30px);
+    }
+    #about-the-shelter .container {
+        flex-direction: column-reverse;
+    }
+    #about-the-shelter .box-with-image {
+        margin: 4rem 0 0 0;
+        display: flex;
+        justify-content: center;
+    }
+    #about-the-shelter .box {
+        margin: 0;
+    }
+    #our-friends .container {
+       flex-wrap: wrap;
+       margin: 0;
+    }
+    #our-friends .card {
+        margin: 0 1rem 1rem 1rem;
+    }
+    #our-friends .card:nth-child(n+4) {
+        display: none;
+    }
+    #our-friends button.primary-contained{
+        width: auto;
+    }
+    .box-with-icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+    #how-you-can-help h4 {
+        font-size: 1rem;
+        text-align: center;
+    }
+    #donation .container {
+        flex-direction: column-reverse;
+    }
+    footer .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1.5rem 1.5rem 0 1.5rem;
+    }
+    footer .box-footer {
+        margin: 0 2rem 2rem 2rem;
+    }
+    .modal .box{
+        width: 50vw;
+}
+
+@media only screen and (max-width: 767px) {
+    .modal img {
+        display: none !important;
+    }
+    .modal-list {
+        padding: 0 1em;
+        text-align: left;
+    }
+    .modal-content h5{
+        text-align: justify;
+    }
+    .modal-content {
+        padding: 0.5rem 0;
+    }
+    .navbar {
+        display: none;
+    }
+    nav {
+        justify-content: space-between;
+        padding: 0;
+    }
+    .logo {
+        padding: 1rem;
+    }
+    .burger-menu {
+        display: block;
+        padding: 1rem;
+    }
+    .container-hero h2 {
+        margin: 1rem;
+    }
+    .container-hero {
+        justify-content: center;
+    }
+    .box {
+        text-align: center;
+        margin: 0 0.5rem;
+    }
+    .container-hero p {
+        margin: 2rem 0;
+    }
+    #about-the-shelter .container {
+        padding: 1rem;
+        margin: 1rem;
+    }
+    #about-the-shelter h3 {
+        margin: 2rem 0;
+    }
+    #our-friends .card:nth-child(n+3) {
+        display: none;
+    }
+    .box-with-icons {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .icon-feature {
+        margin: 1rem 0;
+    }
+    #donation {
+        padding: 2rem 0.5rem;
+    }
+    #donation .container {
+        padding: 1rem;
+        margin: 0;
+        align-items: center;
+    }
+    #donation .box {
+       align-items: center;
+    }
+    #donation .box-with-image {
+        padding: 2rem;
+    }
+    #donation .box-with-image img {
+        position: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+       
+    }
+}
+
 
                                              

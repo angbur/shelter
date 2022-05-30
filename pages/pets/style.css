@@ -98,6 +98,13 @@ p.caption2 {
     margin: 0;
 }
 
+footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 /*=== buttons ===*/
 button {
     border-radius: 100px;
@@ -152,6 +159,9 @@ button.primary-outlined:hover {
 }
    
 /*=== logo ===*/
+.logo {
+    z-index: 200;
+}
 h1.logo-title {
     font-size: 1.6rem;
     font-family: 'Georgia', sans-serif;
@@ -237,6 +247,14 @@ main .container {
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
+    max-width: 1280px;
+}
+
+main {
+    display: flex !important;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 main > h3 {
@@ -318,11 +336,13 @@ footer .container {
     padding: 2.5rem 2rem 0 2rem;
     justify-content: space-between;
     align-items: flex-start;
+    max-width: 1280px;
 }
 
 .box-footer {
     display: flex;
     flex-direction: column;
+    margin: 0 3rem;
 }
 
 .footer-title {
@@ -447,6 +467,87 @@ footer  a:link, footer a:visited {
 
 span.span-with-margin {
     margin-left: 2.4rem;
+}
+
+/*=== responsive navbar ===*/
+
+.burger-menu {
+    display: none;
+    z-index: 100;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+.showMenu {
+    transform: rotate(-90deg);
+    transition: 0.4s;
+}
+nav .navbar-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: var(--light-xl);
+    z-index: 80;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+}  
+
+nav .navbar-mobile a.menuItem:link, nav .navbar-mobile a.menuItem:visited {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+}
+nav .navbar-mobile li {
+    margin-left: 0;
+}
+  
+
+@media only screen and (max-width: 1279px) {
+    nav {
+        padding: 1.5rem;
+    }
+    footer .container {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 1.5rem 1.5rem 0 1.5rem;
+    }
+    footer .box-footer {
+        margin: 0 2rem 2rem 2rem;
+    }
+    .modal img {
+        display: none;
+    }
+    .modal-list {
+        padding: 0 1em;
+        text-align: left;
+    }
+    .modal-content h5{
+        text-align: justify;
+    }
+    .modal-content {
+        padding: 0.5rem 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .navbar {
+        display: none;
+    }
+    nav {
+        justify-content: space-between;
+        padding: 0;
+    }
+    .logo {
+        padding: 1rem;
+    }
+    .burger-menu {
+        display: block;
+        padding: 1rem;
+    }
+   
 }
 
                                              

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shelter</title>
     <link href="http://fonts.cdnfonts.com/css/arial?styles=48878,48885,48883,48884,48888,51076,51077,48879,48880,48881,48882,48887,48890,51911,51912" rel="stylesheet">
-    <link href="http://fonts.cdnfonts.com/css/georgia-2" rel="stylesheet">    
+    <link href="http://fonts.cdnfonts.com/css/georgia-2" rel="stylesheet"> 
     <link rel="stylesheet" href="./style.css">     
     <link rel="stylesheet" href="/assets/css/normalize.css">
 </head>
@@ -26,11 +26,14 @@
                 </a>
             </div>
             <ul class="navbar">
-                <li class="active"><a href="#">About the shelter</a></li>
-                <li><a href="https://angbur.github.io/shelter/pages/pets/index.html">Our pets</a></li>
-                <li><a href="#how-you-can-help">Help the shelter</a></li>
-                <li><a href="#contact">Contacts</a></li>
+                <li class="active"><a class="menuItem" href="#">About the shelter</a></li>
+                <li><a class="menuItem" href="https://angbur.github.io/shelter/pages/pets/index.html">Our pets</a></li>
+                <li><a class="menuItem" href="#how-you-can-help">Help the shelter</a></li>
+                <li><a class="menuItem" href="#contact">Contacts</a></li>
             </ul>
+            <button class="burger-menu">
+                <img class="menuIcon" src="/assets/icons/menu-burger.svg" height="22px" width="30px"></img>
+            </button>
         </nav>        
     </header>
     <main>
@@ -42,7 +45,9 @@
                     wide and open heart. He or she will love you more than anybody else<br>
                     in the world, you will see!
                 </p>
-                <button class="primary-contained" onclick="window.location.href='#our-friends'">Make a friend</button>
+                <div class="button-wrapper">
+                    <button class="primary-contained" onclick="window.location.href='#our-friends'">Make a friend</button>
+                </div>
             </div>
             <div class="box-with-image">
                 <img src="https://angbur.github.io/shelter/assets/images/start-screen-puppy.png" alt="hello-puppy"/>

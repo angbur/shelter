@@ -7,6 +7,8 @@ const trigger3 = document.getElementById('btnMod3');
 const closeButton1 = document.getElementById('close-button1');
 const closeButton2 = document.getElementById('close-button2');
 const closeButton3 = document.getElementById('close-button3');
+const burgerMenu= document.querySelector(".burger-menu");
+const menu = document.querySelector(".navbar");
 
 function toggleModal1() {
     modal1.classList.toggle("show-modal");
@@ -39,3 +41,15 @@ closeButton2.addEventListener("click", toggleModal2);
 closeButton3.addEventListener("click", toggleModal3);
 
 window.addEventListener("click", windowOnClick); 
+
+const toggleMenu = () => {
+    if (burgerMenu.classList.contains("showMenu")) {
+        burgerMenu.classList.remove("showMenu");
+        menu.classList.remove("navbar-mobile");
+    } else {
+        burgerMenu.classList.add("showMenu");
+        menu.classList.add("navbar-mobile");
+    }
+}
+  
+  burgerMenu.addEventListener("click", toggleMenu);

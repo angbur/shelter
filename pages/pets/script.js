@@ -22,6 +22,8 @@ const closeButton5 = document.getElementById('close-button5');
 const closeButton6 = document.getElementById('close-button6');
 const closeButton7 = document.getElementById('close-button7');
 const closeButton8 = document.getElementById('close-button8');
+const burgerMenu= document.querySelector(".burger-menu");
+const menu = document.querySelector(".navbar");
 
 function toggleModal1() {
     modal1.classList.toggle("show-modal");
@@ -94,3 +96,15 @@ closeButton7.addEventListener("click", toggleModal7);
 closeButton8.addEventListener("click", toggleModal8);
 
 window.addEventListener("click", windowOnClick); 
+
+const toggleMenu = () => {
+    if (burgerMenu.classList.contains("showMenu")) {
+        burgerMenu.classList.remove("showMenu");
+        menu.classList.remove("navbar-mobile");
+    } else {
+        burgerMenu.classList.add("showMenu");
+        menu.classList.add("navbar-mobile");
+    }
+}
+  
+  burgerMenu.addEventListener("click", toggleMenu);
