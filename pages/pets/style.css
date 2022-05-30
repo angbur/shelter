@@ -484,7 +484,6 @@ span.span-with-margin {
 
 .showMenu {
     transform: rotate(-90deg);
-    transition: 0.4s;
 }
 nav .navbar-mobile {
     display: flex;
