@@ -561,8 +561,11 @@ nav .navbar-mobile {
     background-color: var(--grey-dark-3xl);
     z-index: 80;
     position: absolute;
-    width: 100vw;
+    width: 320px;
+    right: 0;
     height: 100vh;
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
 }  
 
 nav .navbar-mobile a.menuItem:link, nav .navbar-mobile a.menuItem:visited {
@@ -750,6 +753,7 @@ nav .navbar-mobile li {
         margin: 0;
     }
 }
+
 
 
                                              
