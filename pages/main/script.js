@@ -10,6 +10,18 @@ const closeButton3 = document.getElementById('close-button3');
 const burgerMenu= document.querySelector(".burger-menu");
 const menu = document.querySelector(".navbar");
 
+let pets = [];
+  
+  async function loadPets() {
+    const response = await fetch('https://angbur.github.io/shelter/assets/data/pets.json');
+    pets = await response.json();
+    console.log(pets)
+  }
+
+  loadPets();
+  console.log(pets)
+
+
 function toggleModal1() {
     modal1.classList.toggle("show-modal");
 }
@@ -53,3 +65,7 @@ const toggleMenu = () => {
 }
   
   burgerMenu.addEventListener("click", toggleMenu);
+
+
+  const ourFriendsContainerCards = document.querySelector('#container-class');
+  
