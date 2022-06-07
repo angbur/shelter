@@ -133,20 +133,100 @@ const petsPage = () => {
             const leftArrow = document.getElementById('arrow-left');
             const rightArrow = document.getElementById('arrow-right');
             const rightArrowDouble = document.getElementById('arrow-right-start');
+            const page = document.getElementById('page');
 
-            rightArrow.addEventListener('click', ()=>{
+            rightArrow.addEventListener('click', (event)=>{
                 pets = shuffleCard(pets);
                 document.getElementById('card-container').innerHTML='';
                 getCard(pets, startCard, endCard);
                 setPagination();
+                console.log( page.innerText)
+                parseInt(page.innerHTML) < 10
+                    page.innerHTML = (parseInt(page.innerText)+1).toString() 
+                    parseInt(page.innerHTML) === 10 ? (
+                        rightArrow.disabled = true,
+                        rightArrow.classList.add('disabled'),
+                        rightArrowDouble.disabled = true,
+                        rightArrowDouble.classList.add('disabled')
+                      ) : null
+                page.innerHTML > 1 
+                    ?   (
+                        leftArrowDouble.disabled = false,
+                        leftArrowDouble.classList.remove('disabled'),
+                        leftArrow.disabled = false,
+                        leftArrow.classList.remove('disabled')
+                        )
+                    : (
+                        leftArrowDouble.disabled = true,
+                        leftArrowDouble.classList.add('disabled'),
+                        leftArrow.disabled = true,
+                        leftArrow.classList.add('disabled')
+                      )
+                      event.stopImmediatePropagation();
             });
 
-            leftArrow.addEventListener('click', ()=>{
+            leftArrow.addEventListener('click', (event)=>{
                 pets = shuffleCard(pets);
                 document.getElementById('card-container').innerHTML='';
                 getCard(pets, startCard, endCard);
                 setPagination();
+                page.innerHTML = parseInt(page.innerText)-1;
+
+                parseInt(page.innerHTML) === 1 
+                    ? (
+                        leftArrowDouble.disabled = true,
+                        leftArrowDouble.classList.add('disabled'),
+                        leftArrow.disabled = true,
+                        leftArrow.classList.add('disabled'),
+                        rightArrow.disabled = false,
+                        rightArrowDouble.disabled = false,
+                        rightArrow.classList.remove('disabled'),
+                        rightArrowDouble.classList.remove('disabled')
+
+                    ) : null
+                
+                parseInt(page.innerHTML) < 10 
+                    ? (
+                        rightArrow.disabled = false,
+                        rightArrowDouble.disabled = false,
+                        rightArrow.classList.remove('disabled'),
+                        rightArrowDouble.classList.remove('disabled')
+                    ): null
+
+                event.stopImmediatePropagation();
             });
+
+            leftArrowDouble.addEventListener('click', (event)=>{
+                page.innerHTML = 1;
+               
+                leftArrowDouble.disabled = true,
+                leftArrowDouble.classList.add('disabled'),
+                leftArrow.disabled = true,
+                leftArrow.classList.add('disabled'),
+
+                rightArrow.disabled = false,
+                rightArrow.classList.remove('disabled'),
+                rightArrowDouble.disabled = false,
+                rightArrowDouble.classList.remove('disabled')
+                    
+                event.stopImmediatePropagation();
+            });
+
+            rightArrowDouble.addEventListener('click', ()=>{
+                page.innerHTML = '10';
+
+                rightArrowDouble.disabled = true,
+                rightArrowDouble.classList.add('disabled'),
+                rightArrow.disabled = true,
+                rightArrow.classList.add('disabled'),
+
+                leftArrowDouble.disabled = false,
+                leftArrowDouble.classList.remove('disabled'),
+                leftArrow.disabled = false,
+                leftArrow.classList.remove('disabled')
+                
+            });
+       
 
 
 
