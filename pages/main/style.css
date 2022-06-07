@@ -521,6 +521,7 @@ footer  a:link, footer a:visited {
     font-size: 1.7rem;
     font-weight: 400;
     background-color: transparent;
+    padding: 15px;
 }
 
 .close-button:hover {
