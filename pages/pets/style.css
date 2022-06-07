@@ -344,17 +344,10 @@ main button.primary-outlined {
 
 /* === footer ===*/
 
-footer {
-    background: -webkit-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
-    background: -o-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
-    background: -moz-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
-    background:  -webkit-linear-gradient(left,transparent,rgb(80, 63, 51) 0%,transparent);
-    background-color: rgb(37, 35, 36);
-}
-
 footer .container {
-    padding: 2.5rem 2rem 0 2rem;
+    padding: 0;
     justify-content: space-between;
+    margin: 3rem 0 1rem 2rem;
     align-items: flex-start;
 }
 
@@ -389,7 +382,7 @@ footer a:link, p.location1, p.location2 {
 footer .icon {
     margin-right: 1rem;
     position: relative;
-    top: 8px;
+    top: 12px;
 }
 
 p.email, p.phone, p.location1, p.location2 {
@@ -522,12 +515,6 @@ nav .navbar-mobile a.menuItem:link, nav .navbar-mobile a.menuItem:visited {
 }
 nav .navbar-mobile li {
     margin-left: 0;
-}
-
-@media only screen and (min-width: 1280px) {
-    footer, .container {
-        max-width: 1280px;
-    }
 }
 
 @media only screen and (max-width: 1279px) {
