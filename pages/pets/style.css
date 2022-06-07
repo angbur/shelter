@@ -193,6 +193,22 @@ nav {
     display: flex;
 }
 
+nav .navbar-mobile {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    background-color: var(--grey-dark-3xl);
+    z-index: 80;
+    position: absolute;
+    width: 320px;
+    right: 0;
+    height: 100vh;
+    -webkit-animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+    animation: slide-left 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}  
+
 .navbar, a:link, a:visited  {
     display: flex;
     flex-direction: row;
@@ -302,6 +318,7 @@ main button.primary-outlined {
     width: 52px;
     height: 52px;
     margin: 0 0.5rem;
+    padding: 15px;
     font-size: 1rem;
     font-family: 'Georgia', sans-serif;
 }
@@ -454,6 +471,8 @@ footer  a:link, footer a:visited {
     font-size: 1.7rem;
     font-weight: 400;
     background-color: transparent;
+    padding: 15px;
+    margin: 0;
 }
 
 .close-button:hover {

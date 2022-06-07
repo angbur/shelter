@@ -1,110 +1,163 @@
-const modal1 = document.getElementById('modal1');
-const modal2 = document.getElementById('modal2');
-const modal3 = document.getElementById('modal3');
-const modal4 = document.getElementById('modal4');
-const modal5 = document.getElementById('modal5');
-const modal6 = document.getElementById('modal6');
-const modal7 = document.getElementById('modal7');
-const modal8 = document.getElementById('modal8');
-const trigger1 = document.getElementById('btnMod1');
-const trigger2 = document.getElementById('btnMod2');
-const trigger3 = document.getElementById('btnMod3');
-const trigger4 = document.getElementById('btnMod4');
-const trigger5 = document.getElementById('btnMod5');
-const trigger6 = document.getElementById('btnMod6');
-const trigger7 = document.getElementById('btnMod7');
-const trigger8 = document.getElementById('btnMod8');
-const closeButton1 = document.getElementById('close-button1');
-const closeButton2 = document.getElementById('close-button2');
-const closeButton3 = document.getElementById('close-button3');
-const closeButton4 = document.getElementById('close-button4');
-const closeButton5 = document.getElementById('close-button5');
-const closeButton6 = document.getElementById('close-button6');
-const closeButton7 = document.getElementById('close-button7');
-const closeButton8 = document.getElementById('close-button8');
-const burgerMenu= document.querySelector(".burger-menu");
-const menu = document.querySelector(".navbar");
+import getPets from "../../assets/data/pets.js";
 
-function toggleModal1() {
-    modal1.classList.toggle("show-modal");
-}
+const petsPage = () => {
+    let pets = getPets().sort(() => Math.random() - .5);
 
-function toggleModal2() {
-    modal2.classList.toggle("show-modal");
-}
+    const burgerMenu= document.querySelector(".burger-menu");
+    const menu = document.querySelector(".navbar");
+    let n = 8;
+    let startCard = 0;
+    let endCard = startCard+n;
 
-function toggleModal3() {
-    modal3.classList.toggle("show-modal");
-}
-
-function toggleModal4() {
-    modal4.classList.toggle("show-modal");
-}
-
-function toggleModal5() {
-    modal5.classList.toggle("show-modal");
-}
-
-function toggleModal6() {
-    modal6.classList.toggle("show-modal");
-}
-
-function toggleModal7() {
-    modal7.classList.toggle("show-modal");
-}
-
-function toggleModal8() {
-    modal8.classList.toggle("show-modal");
-}
-
-function windowOnClick(event) {
-    if (event.target === modal1) {
-        toggleModal1();
-    } else if (event.target === modal2) {
-        toggleModal2();
-    } else if (event.target === modal3) {
-        toggleModal3();
-    } else if (event.target === modal4) {
-        toggleModal4();
-    } else if (event.target === modal5) {
-        toggleModal5();
-    } else if (event.target === modal6) {
-        toggleModal6();
-    } else if (event.target === modal7) {
-        toggleModal7();
-    } else if (event.target === modal8) {
-        toggleModal8();
-    }
-}
-
-trigger1.addEventListener("click", toggleModal1);
-trigger2.addEventListener("click", toggleModal2);
-trigger3.addEventListener("click", toggleModal3);
-trigger4.addEventListener("click", toggleModal4);
-trigger5.addEventListener("click", toggleModal5);
-trigger6.addEventListener("click", toggleModal6);
-trigger7.addEventListener("click", toggleModal7);
-trigger8.addEventListener("click", toggleModal8);
-
-closeButton1.addEventListener("click", toggleModal1);
-closeButton2.addEventListener("click", toggleModal2);
-closeButton3.addEventListener("click", toggleModal3);
-closeButton4.addEventListener("click", toggleModal4);
-closeButton5.addEventListener("click", toggleModal5);
-closeButton6.addEventListener("click", toggleModal6);
-closeButton7.addEventListener("click", toggleModal7);
-closeButton8.addEventListener("click", toggleModal8);
-
-window.addEventListener("click", windowOnClick); 
-
-const toggleMenu = () => {
-    if (burgerMenu.classList.contains("showMenu")) {
-        burgerMenu.classList.remove("showMenu");
-        menu.classList.remove("navbar-mobile");
-    } else {
-        burgerMenu.classList.add("showMenu");
-        menu.classList.add("navbar-mobile");
-    }
-}
+    const toggleMenu = () => {
+        if (burgerMenu.classList.contains("showMenu")) {
+            burgerMenu.classList.remove("showMenu");
+            menu.classList.remove("navbar-mobile");
+        } else {
+            burgerMenu.classList.add("showMenu");
+            menu.classList.add("navbar-mobile");
+        }
+    };
   
-  burgerMenu.addEventListener("click", toggleMenu);
+    burgerMenu.addEventListener("click", toggleMenu);
+
+    const ourFriendsContainerCards = document.getElementById('card-container');
+
+    const getCard = (petsList,startCard, endCard) => {
+
+            petsList.slice(startCard,endCard).map((pet, id)=>{
+            const card = document.createElement('div');
+            card.classList.add('card');
+            ourFriendsContainerCards.appendChild(card);
+
+            const petImage = document.createElement('img');
+            petImage.src = pet.img;
+            petImage.alt = `${pet.breed} - ${pet.name}`;
+            card.appendChild(petImage);
+
+            const petName = document.createElement('p');
+            petName.classList.add('caption');
+            petName.innerHTML = pet.name;
+            card.append(petName);
+
+            const moreButton = document.createElement('button');
+            moreButton.setAttribute('id', `btnMod${id}`);
+            moreButton.setAttribute('value', id);
+            moreButton.classList.add('primary-outlined');
+            moreButton.classList.add('load-more');
+            moreButton.type = "button";
+            moreButton.innerHTML = 'Learn more';
+            
+            card.appendChild(moreButton);
+
+            const modalDiv = document.createElement('div');
+            modalDiv.setAttribute('id', `modal${id}`);
+            modalDiv.classList.add("modal");
+            
+            const modalContentDiv = document.createElement('div');
+            modalContentDiv.classList.add("modal-content");
+            const closeButton = document.createElement('button');
+            closeButton.id = `closeButton${id}`;
+            closeButton.setAttribute('value', id);
+            closeButton.setAttribute('type', 'button');
+            closeButton.classList.add('close-button');
+            closeButton.innerHTML = '&times;';
+
+            modalContentDiv.appendChild(closeButton);
+
+            const petImageModal = document.createElement('img');
+            petImageModal.src = pet.img;
+            petImageModal.alt = `${pet.breed} - ${pet.name}`;
+
+            modalContentDiv.appendChild(petImageModal);
+
+            const box = document.createElement('div');
+            const boxTitle = document.createElement('h3');
+            boxTitle.innerHTML = pet.name;
+            const boxSubtitle = document.createElement('h4');
+            boxSubtitle.innerHTML = pet.type;
+            const boxDescription = document.createElement('h5');
+            boxDescription.innerHTML = pet.description;
+
+            const boxList = document.createElement('ul');
+            const liAge = document.createElement('li');
+            liAge.innerHTML = pet.age;
+            const liInoculations = document.createElement('li');
+            liInoculations.innerHTML = pet.inoculations;
+            const liDiseases = document.createElement('li');
+            liDiseases.innerHTML = pet.diseases;
+            const liParasites = document.createElement('li');
+            liParasites.innerHTML = pet.parasites;
+
+            boxList.appendChild(liAge);
+            boxList.appendChild(liInoculations);
+            boxList.appendChild(liDiseases);
+            boxList.appendChild(liParasites);
+
+            box.appendChild(boxTitle);
+            box.appendChild(boxSubtitle);
+            box.appendChild(boxDescription);
+            box.appendChild(boxList);
+
+            modalContentDiv.appendChild(box);
+            modalDiv.appendChild(modalContentDiv);
+            card.appendChild(modalDiv);
+
+
+            moreButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                const modal = document.getElementById(`modal${event.target.value}`);
+                modal ? modal.classList.add('show-modal') : null;
+            });
+            
+
+            closeButton.addEventListener('click', function (event) {
+                event.preventDefault();
+                const modal = document.getElementById(`modal${event.target.value}`);
+                modal ? modal.classList.remove('show-modal') : null;
+            });
+
+          
+            
+            return ourFriendsContainerCards.appendChild(card)
+            });
+        };
+
+        const shuffleCard = (data) => {
+            data = data.sort(() => Math.random() - .5);
+            return data;
+        };
+
+        const setPagination = () => {
+            const leftArrowDouble = document.getElementById('arrow-left-start');
+            const leftArrow = document.getElementById('arrow-left');
+            const rightArrow = document.getElementById('arrow-right');
+            const rightArrowDouble = document.getElementById('arrow-right-start');
+
+            rightArrow.addEventListener('click', ()=>{
+                pets = shuffleCard(pets);
+                document.getElementById('card-container').innerHTML='';
+                getCard(pets, startCard, endCard);
+                setPagination();
+            });
+
+            leftArrow.addEventListener('click', ()=>{
+                pets = shuffleCard(pets);
+                document.getElementById('card-container').innerHTML='';
+                getCard(pets, startCard, endCard);
+                setPagination();
+            });
+
+
+
+
+        }
+    
+
+    return (
+        getCard(pets, startCard, endCard),
+        setPagination()
+    )
+}
+
+petsPage();
