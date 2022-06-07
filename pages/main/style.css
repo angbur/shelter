@@ -614,7 +614,6 @@ nav .navbar-mobile li {
         justify-content: center;
     }
     .container-hero .box-with-image {
-        flex-grow: grow;
         margin: 4rem 2rem 0 4rem;
     }
     .container-hero .box-with-image img {
@@ -741,7 +740,6 @@ nav .navbar-mobile li {
         width: 100vw;
     }
     #donation .box-with-image img {
-        position: flex;
         justify-content: center;
         align-items: center;
         text-align: center;

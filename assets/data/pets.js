@@ -1,4 +1,6 @@
-[
+const getPets =  () => {
+  const pets = 
+  [
     {
         "name": "Katrina",
         "img": "https://angbur.github.io/shelter/assets/images/pets-katrine.png",
@@ -25,7 +27,7 @@
     },
     {
         "name": "Woody",
-        "img": "https://angbur.github.io/shelter/assets/images/pets-jennifer.png",
+        "img": "https://angbur.github.io/shelter/assets/images/pets-woody.png",
         "type": "Dog",
         "breed": "Labrador",
         "description":
@@ -95,4 +97,8 @@
         "diseases": ["none"],
         "parasites": ["none"],
     }
-]
+  ]
+  return pets
+};
+
+export default getPets;
