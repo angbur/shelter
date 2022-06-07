@@ -197,6 +197,10 @@ const petsPage = () => {
             });
 
             leftArrowDouble.addEventListener('click', (event)=>{
+                pets = shuffleCard(pets);
+                document.getElementById('card-container').innerHTML='';
+                getCard(pets, startCard, endCard);
+                setPagination();
                 page.innerHTML = 1;
                
                 leftArrowDouble.disabled = true,
@@ -213,6 +217,10 @@ const petsPage = () => {
             });
 
             rightArrowDouble.addEventListener('click', ()=>{
+                pets = shuffleCard(pets);
+                document.getElementById('card-container').innerHTML='';
+                getCard(pets, startCard, endCard);
+                setPagination();
                 page.innerHTML = '10';
 
                 rightArrowDouble.disabled = true,
