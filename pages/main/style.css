@@ -2,7 +2,6 @@
     font-family: 'Georgia Bold';
     src: url('/assets/fonts/georgia.ttf');
 }
-box-sizing:b
 
 /*=== colors ===*/
 :root {
@@ -18,6 +17,14 @@ box-sizing:b
     --light-l: #F6F6F6;
     }
 
+body, main, footer {
+    background: -webkit-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
+    background: -o-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
+    background: -moz-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
+    background:  -webkit-linear-gradient(left,transparent,rgb(80, 63, 51) 0%,transparent);
+    background-color: rgb(37, 35, 36);
+}
+
 body, :root, html {
     font-family: 'Arial', sans-serif;
     box-sizing: border-box;
@@ -25,11 +32,7 @@ body, :root, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    background: -webkit-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
-    background: -o-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
-    background: -moz-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
-    background:  -webkit-linear-gradient(left,transparent,rgb(80, 63, 51) 0%,transparent);
-    background-color: rgb(37, 35, 36);
+   
 }
 
 ::after, ::before {
@@ -328,9 +331,13 @@ main button {
     border-radius: 9px;
 }
 
-#our-friends {
-    background: var(--light-l);
+section#our-friends {
+    background: #F6F6F6;
     text-align: center;
+}
+
+section#donation {
+    background: #F6F6F6;
 }
 
 #our-friends p.caption {
