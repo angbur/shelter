@@ -104,6 +104,11 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background: -webkit-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
+    background: -o-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
+    background: -moz-linear-gradient(320deg, rgb(80, 63, 51) 0%, rgb(37, 35, 36) 43%, rgb(35, 33, 34) 100%);
+    background:  -webkit-linear-gradient(left,transparent,rgb(80, 63, 51) 0%,transparent);
+    background-color: rgb(37, 35, 36);
 }
 
 /*=== buttons ===*/
